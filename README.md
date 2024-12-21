@@ -1,75 +1,39 @@
-<header>
+# About me
+I am an Instrumentation and Control Engineer based in Kenya. I recently gained interest in programming and am in the process of learning to code. I decided to join this network to make my learning process smooth and collaborative. As at now (the time when I'm writing this), I know two languages quite well. I have previously been working on _**python**_ and am in the process of reminding myself _the **java** language_.
+Below are some of the projects that I have been and I'm still working on (sic). I will categorize them according to the language to make it easy to browse through them.
+**Please dive right in and thanks for visiting.**
 
-<!--
-  <<< Author notes: Course header >>>
-  Include a 1280×640 image, course title in sentence case, and a concise description in emphasis.
-  In your repository settings: enable template repository, add your 1280×640 social image, auto delete head branches.
-  Add your open source license, GitHub uses MIT license.
--->
+# Projects
+## Python
+The first 4 projects below, namely, the connect 4, Hangman, TicTacToe, and FreeCell were part of my class work. I took the course named [_Python is Easy_](https://www.pirple.com/courses/take/python-is-easy/). 
+While I gave much customization to the projects, I believe there may still be better ways of handling them, and I will always welcome suggestions on how to improve them.
 
-# Introduction to GitHub
+**1. TicTacToe**
+TicTacToe is a famous game and especially among those lerning to code. It is basically a 2 player 3 X 3 grid game where each player aims to place their pieces to form a straight line. One player uses 'X' and the other uses 'O'. 
+In my version of TicTacToe, I have provided provisions for both single and 2-player modes. In single player mode, the player plays agains the computer, which will try to prevent the player from winning and it will also attempt to win before the player.
+Furthermore, to make it more fun, I provided 3 hard mode levels for the single player. Please check it out.
 
-_Get started using GitHub in less than an hour._
+**2. Connect 4**
+This project shows a Command Line Interface (CLI) version of the Connect 4 game. Instead of black and red icons representing the different players' pieces, I decided to use the letters 'X' and 'O' just as in TicTacToe. Just like in the TicTacToe described above, I have provided both 2-player and single-player modes.
+When playing the single-player mode, the computer will try winning before the player while actively preventing the player from winning.
+Please try it out and provide reviews and suggestions for improvement. Thanks
 
-</header>
+**3. Hangman**
+The Hangman is also a common game for new programmers. It is basically a guessing game whereby the player tries guessing a workd one letter at a time.
+The catch is that the player has a definite number of wrong guesses that they can make. With each wrong letter, a line-man moves a step closer to getting hanged.
+If however, the player guesses the name with less wrong guesses, they win the game. 
+My game also provides a single and 2 player modes and in the single player mode, the game offers differnt hard levels from which the player can choose.
+Please check it out and give me feedback. Thank you.
 
-<!--
-  <<< Author notes: Step 1 >>>
-  Choose 3-5 steps for your course.
-  The first step is always the hardest, so pick something easy!
-  Link to docs.github.com for further explanations.
-  Encourage users to open new tabs for steps!
--->
+**4. FreeCell**
+This was my final project for the course [Python is Easy](https://www.pirple.com/courses/take/python-is-easy/). While it was not necessary to make it as realistic as it is now, I decided to continue working on it. I could say that it is currently my most advanced piece of code ever.
+I have made the FreeCell game to look as realistic as possible despite being a CLI game. 
+It follows all the rules of the freecell game with a slight improvement, namely, it also shows how far the player has gone in completing the game as a percentage.
 
-## Step 1: Create a branch
 
-_Welcome to "Introduction to GitHub"! :wave:_
+**5. Sudoku Solver**
+According to my plan, this is supposed to be my best program ever. Once complete, it will be able to solve any sudoku puzzle passed to it. 
+Currently it is still _a work in progress..._
 
-**What is GitHub?**: GitHub is a collaboration platform that uses _[Git](https://docs.github.com/get-started/quickstart/github-glossary#git)_ for versioning. GitHub is a popular place to share and contribute to [open-source](https://docs.github.com/get-started/quickstart/github-glossary#open-source) software.
-<br>:tv: [Video: What is GitHub?](https://www.youtube.com/watch?v=pBy1zgt0XPc)
-
-**What is a repository?**: A _[repository](https://docs.github.com/get-started/quickstart/github-glossary#repository)_ is a project containing files and folders. A repository tracks versions of files and folders. For more information, see "[About repositories](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories)" from GitHub Docs.
-
-**What is a branch?**: A _[branch](https://docs.github.com/en/get-started/quickstart/github-glossary#branch)_ is a parallel version of your repository. By default, your repository has one branch named `main` and it is considered to be the definitive branch. Creating additional branches allows you to copy the `main` branch of your repository and safely make any changes without disrupting the main project. Many people use branches to work on specific features without affecting any other parts of the project.
-
-Branches allow you to separate your work from the `main` branch. In other words, everyone's work is safe while you contribute. For more information, see "[About branches](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches)".
-
-**What is a profile README?**: A _[profile README](https://docs.github.com/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme)_ is essentially an "About me" section on your GitHub profile where you can share information about yourself with the community on GitHub.com. GitHub shows your profile README at the top of your profile page. For more information, see "[Managing your profile README](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme)".
-
-![profile-readme-example](/images/profile-readme-example.png)
-
-### :keyboard: Activity: Your first branch
-
-1. Open a new browser tab and navigate to your newly made repository. Then, work on the steps in your second tab while you read the instructions in this tab.
-2. Navigate to the **< > Code** tab in the header menu of your repository.
-
-   ![code-tab](/images/code-tab.png)
-
-3. Click on the **main** branch drop-down.
-
-   ![main-branch-dropdown](/images/main-branch-dropdown.png)
-
-4. In the field, name your branch `my-first-branch`. In this case, the name must be `my-first-branch` to trigger the course workflow.
-5. Click **Create branch: my-first-branch** to create your branch.
-
-   ![create-branch-button](/images/create-branch-button.png)
-
-   The branch will automatically switch to the one you have just created.
-   The **main** branch drop-down bar will reflect your new branch and display the new branch name.
-
-6. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
-
-<footer>
-
-<!--
-  <<< Author notes: Footer >>>
-  Add a link to get support, GitHub status page, code of conduct, license link.
--->
-
----
-
-Get help: [Post in our discussion board](https://github.com/orgs/skills/discussions/categories/introduction-to-github) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
-
-&copy; 2024 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
-
-</footer>
+## Java
+I am currently refreshing myself in java from [Fundamentals of Java](https://www.pirple.com/courses/take/fundamentals-of-java/). I will keep updating projects that I do in this language. Currently I do not yet have a worthy program to paste here. Your patience is highly appreciated.
