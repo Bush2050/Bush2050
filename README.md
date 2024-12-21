@@ -11,7 +11,7 @@ While I gave much customization to the projects, I believe there may still be be
 **1. TicTacToe**
 TicTacToe is a famous game and especially among those lerning to code. It is basically a 2 player 3 X 3 grid game where each player aims to place their pieces to form a straight line. One player uses 'X' and the other uses 'O'. 
 In my version of TicTacToe, I have provided provisions for both single and 2-player modes. In single player mode, the player plays agains the computer, which will try to prevent the player from winning and it will also attempt to win before the player.
-Furthermore, to make it more fun, I provided 3 hard mode levels for the single player. Please check it out.
+Furthermore, to make it more fun, I provided 3 hard mode levels for the single player. Please check it out at [Tic-tac-toe](./My python tic-tac-toe game VS Comp.py).
 
 **2. Connect 4**
 This project shows a Command Line Interface (CLI) version of the Connect 4 game. Instead of black and red icons representing the different players' pieces, I decided to use the letters 'X' and 'O' just as in TicTacToe. Just like in the TicTacToe described above, I have provided both 2-player and single-player modes.
