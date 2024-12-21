@@ -11,24 +11,25 @@ While I gave much customization to the projects, I believe there may still be be
 **1. TicTacToe**
 TicTacToe is a famous game and especially among those lerning to code. It is basically a 2 player 3 X 3 grid game where each player aims to place their pieces to form a straight line. One player uses 'X' and the other uses 'O'. 
 In my version of TicTacToe, I have provided provisions for both single and 2-player modes. In single player mode, the player plays agains the computer, which will try to prevent the player from winning and it will also attempt to win before the player.
-Furthermore, to make it more fun, I provided 3 hard mode levels for the single player. Please check it out at [Tic-tac-toe](./My python tic-tac-toe game VS Comp.py).
+Furthermore, to make it more fun, I provided 3 hard mode levels for the single player. Please check it out at [Tic-tac-toe](./My_python_tic-tac-toe_game_VS_Comp.py).
 
 **2. Connect 4**
 This project shows a Command Line Interface (CLI) version of the Connect 4 game. Instead of black and red icons representing the different players' pieces, I decided to use the letters 'X' and 'O' just as in TicTacToe. Just like in the TicTacToe described above, I have provided both 2-player and single-player modes.
 When playing the single-player mode, the computer will try winning before the player while actively preventing the player from winning.
-Please try it out and provide reviews and suggestions for improvement. Thanks
+Please try it out at [Connect 4](./My_python_Connect_4_game.py) and provide reviews and suggestions for improvement. Thanks
 
 **3. Hangman**
 The Hangman is also a common game for new programmers. It is basically a guessing game whereby the player tries guessing a workd one letter at a time.
 The catch is that the player has a definite number of wrong guesses that they can make. With each wrong letter, a line-man moves a step closer to getting hanged.
 If however, the player guesses the name with less wrong guesses, they win the game. 
 My game also provides a single and 2 player modes and in the single player mode, the game offers differnt hard levels from which the player can choose.
-Please check it out and give me feedback. Thank you.
+Please check it out at [Hangman](./My_python_Hangman.py) and give me feedback. Thank you.
 
 **4. FreeCell**
 This was my final project for the course [Python is Easy](https://www.pirple.com/courses/take/python-is-easy/). While it was not necessary to make it as realistic as it is now, I decided to continue working on it. I could say that it is currently my most advanced piece of code ever.
 I have made the FreeCell game to look as realistic as possible despite being a CLI game. 
 It follows all the rules of the freecell game with a slight improvement, namely, it also shows how far the player has gone in completing the game as a percentage.
+Check it out at [FreeCell](./My_python_FreeCell.py).
 
 
 **5. Sudoku Solver**
