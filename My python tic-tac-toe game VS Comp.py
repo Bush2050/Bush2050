@@ -5,15 +5,7 @@
 #
 # *This code was adapted from Pirple's TicTacToe lecture
 
-V 1.8
-Has improved competing algorithm. It's now even harder to beat the comp
-
-V 1.9
-Includes records for wins, draws, and loss as long as the game does not exit. 
-These stats reset upon restarting the game. The game also has better exitting
-code that prevents generation of exceptions.
-
-available at: https://pastebin.com/xHFD2jy2
+Also available at: https://pastebin.com/xHFD2jy2
 
 author: baya_w
 '''
