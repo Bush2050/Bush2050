@@ -83,15 +83,15 @@ def createDeck():
             cardTemplate.append('K')
         else:
             cardTemplate.append(str(num))
-    
+
     # Here we give the cards the suit  symbols
     cardDeck = []
     for symbol in suit :
         for num in range(len(cardTemplate)):
             cardDeck.append(cardTemplate[num] + symbol)
-    
+
     return cardDeck
-    
+
 
 # Prints the freecells and foundation pile as in a natural Free Cell game
 def printHeader():
@@ -109,7 +109,7 @@ def printHeader():
             color = reset
         item = "  " if item == " " else item
         print(f"{color}{item} {reset}", end = " ")
-    
+
     print("]", end = "  [")
     for item in home:
         if item in redDeck:
@@ -120,7 +120,7 @@ def printHeader():
             color = reset
         item = "  " if item == " " else item
         print(f"{color}{item} {reset}", end = " ")
-    
+
     hePerc, diPerc, flPerc, spPerc = 0, 0, 0, 0
     for num in range(13):
         if home[0] == heSuit[num]:
@@ -131,7 +131,7 @@ def printHeader():
             flPerc = num + 1
         if home[3] == spSuit[num]:
             spPerc = num + 1
-    
+
     winPerc = hePerc + diPerc + flPerc + spPerc
     winPerc = round((winPerc * 100) / 52)
     print("]", str(winPerc) + "%\n")
@@ -141,6 +141,8 @@ def printHeader():
 def printGameField():
     """Prints the 8 columns in a natural way as they would appear on a 
     normal Freecell game. It also prints the Freecells and home"""
+    duration[1] = time() - duration[0] + duration[1]
+    duration[0] = time()
     printHeader()
     longListLen = 0
     red = "\033[33m"
@@ -149,7 +151,7 @@ def printGameField():
     for num in range(8):
         if len(column[num]) >= longListLen:
             longListLen = len(column[num])
-    
+
     # Remember that while playing the game, the column length will change
     # This variable finds the longest of them
     for num in range(7):
@@ -174,27 +176,30 @@ def printGameField():
                         print(f" {color}{column[i][n]} {reset}", end = ' ')
                 except:
                     print("     ", end = "")
-    
+
     if not proMode[0]:
         print(f'\n{red}Red suits are:    ♥ and ♦   {reset}while \n{black}Black suits are:  ♣ and ♠  {reset}')
+    else:
+        print("    Time > ", end = "")
+        print(str(round(duration[1]//60)) + ":" + str(round(duration[1]%60)))
 
 
 # Works with colToHome
 def populateHome(card, i):
     """Places the cd card from column[i] to its specific home/foundation pile location."""
-    
+
     def placeCard(card, subDeck, posn, i):
         """Validates the card for placement at the respective home 
         location given by posn"""
         for n in range(1, 13):
             if card == subDeck[n] and home[posn] == subDeck[n - 1]:
                 home[posn] = card
-        
+
         if home[posn] != card: # Card not placed
             column[i].append(card) # Return it to its initia column
             print("The card", card, "cannot go home")
             sleep(delayT2[0])
-    
+
     if card in heSuit :
         # This card should go to home[0] (Hearts)
         if home[0] == ' ' and card == 'A♥':
@@ -284,7 +289,7 @@ def colToCol(col1, col2):
 def moveBlockColToCol(col1, col2):
     """Allows for the movement of more than 1 cards from col1 to col 2.
     It's an improvement of and may replace colToCol() when complete"""
-    
+
     def movableCards(dest):
         """Returns the highest possible nunber of cards movabe based on the 
         current game state. dest is the condition of receiving column. If it
@@ -296,18 +301,18 @@ def moveBlockColToCol(col1, col2):
         for num in range(8):
             if len(column[num]) ==0:
                 emptyCol += 1
-        
+
         if not dest: # destination occupied or not
             emptyCol -= 1
         cards = (avaFrCes + 1) * (emptyCol + 1)
         return 13 if cards >= 13 else  cards # Number of cards that can be received
-    
+
     def checkCards(col1, donLength):
         """Checks the donating column for the maximum no of cards that can be moved.
         It, thus, checks the color and number sequence to ensure they allow for 
         movement of the cards. It returns the maximum number of cards that can
         be donated from column[col1]"""
-        
+
         def smart(colm, num, suit, nextSuit):
             """A smart way of checking the number sequence"""
             for i in range(12): # Color and rank of cards following each other
@@ -316,7 +321,7 @@ def moveBlockColToCol(col1, col2):
                 else:
                     pass
                     # return False
-        
+
         length = 1 # This is the number that it will return
         test = True # This determines whether the card block is still consistent
         colm = column[col1]
@@ -368,10 +373,10 @@ def moveBlockColToCol(col1, col2):
                 else:
                     test = False
                     pass
-        
+
         # column[col1] = column[col1][:-length]
         return length
-        
+
     recLength = movableCards(True if len(column[col2]) != 0 else False)
     donLength = len(column[col1]) if len(column[col1]) <= recLength else recLength
     donLength = checkCards(col1, donLength)
@@ -386,11 +391,11 @@ def moveBlockColToCol(col1, col2):
             hostSuit = heSuit if hostCard in heSuit else diSuit
         else:
             hostSuit = flSuit if hostCard in flSuit else spSuit
-        
+
         for i in range(13):
             if hostCard == hostSuit[i]:
                 break # i is the index of the card in receiving column
-            
+
         succeed, colorOk = False, False
         for num in range(len(donatedColumn)):
             # donatedColumn contains all the cards that can be moved from column[col1]
@@ -412,14 +417,14 @@ def moveBlockColToCol(col1, col2):
                         back = donatedColumn[:num]
                         succeed = True
                         break
-            
+
             if succeed:
                 break
-            
+
         if not colorOk:
             print("\nColor sequence mismatch. Can't move from column", col1 + 1, "to column", col2 + 1)
-            input("Press enter to proceed")
-        
+            sleep(delayT2[0])
+
         if not succeed:
             print("\nCannot move from column", col1 + 1, "to column", col2 + 1)
             sleep(delayT2[0])
@@ -427,12 +432,12 @@ def moveBlockColToCol(col1, col2):
             for num in range(len(forward)):
                 column[col2].append(forward[num])
                 column[col1].pop()
-            
+
             for num in range(len(back)):
                 pass
                 # column[col1].append(back[num])
-                
-    
+
+
 # Handles card movement between freecells and columns
 def maintainFreeCell(action, col, posn = 0):
     """action = 1 > add to freecell from column[col] 
@@ -478,13 +483,13 @@ def freeToHome(num):
             if card == subDeck[n] and home[posn] == subDeck[n - 1]:
                 home[posn] = card
                 freeCells[num] = " "
-        
+
         # If the card is invalid for placement, this is executed
         if home[posn] != card:
             freeCells[num] = card
             print("The card", card, "cannot go home")
             sleep(delayT2[0])
-            
+
     card = freeCells[num]
     if card != ' ':
         if card in heSuit :
@@ -510,7 +515,7 @@ def freeToHome(num):
                 home[3], freeCells[num] = card, ' '
             else:
                 moveCard(card, spSuit , 3, num)
-    
+
     else:
         print("The chosen cell is empty.")
         sleep(delayT2[0])
@@ -524,12 +529,12 @@ def createSession():
         with open("data/freecell.txt", "r", encoding = "utf-8") as retrieveGame:
             columnStr = retrieveGame.read().split('\n')
             # Creates a list
-            if 2 < len(columnStr) <= 11: # Checks the integrity of the retrieved data
-                
+            if 2 < len(columnStr) <= 12: # Checks the integrity of the retrieved data
+
                 for num in range(4):
                     freeCells[num] = columnStr[0].split(',')[num]
                     home[num] = columnStr[1].split(',')[num]
-                
+
                 # For cases when some columns were already blank, use this
                 if home == [heSuit[12], diSuit[12], flSuit[12], spSuit[12]]:
                     for num in range(4):
@@ -541,27 +546,32 @@ def createSession():
                 for num in range(len(column)):
                     if column[num] == ['']:
                         column[num] = []
-            
+                durationStr = columnStr[10].split(",")
+                duration[0], duration[1] = time(), float(durationStr[1])
+
             else:
                 print('Sorry', player[0], 'No saved game found. Dealing a new deck')
                 raise Exception
             print("Successfully loaded last saved game")
-            # print(column)
-    
+            
+
     except Exception as e:
         print(e)
         print("Created new game session successfully")
         shuffle(deck)
         duration[0] = time()
+        duration[1] = 0
+        for num in range(8):
+            column[num] = []
+            
         for i in range(7):
             for num in range(8):
                 try:
                     column[num].append(deck.pop())
                 except:
                     pass
-        
+
         saveSession() # In case the data doesn't exist, then save the created one
-    duration[0] = time()
 
 
 # Useful only for saving the game data
@@ -583,7 +593,9 @@ def saveSession():
                         saveGame.write(column[col][num] + "\n")
                     else:
                         saveGame.write(column[col][num] + ",")
-    
+            saveGame.write(str(duration[0]) + ",")
+            saveGame.write(str(duration[1]) + "\n")
+
     except Exception as e:
         print(e)
         pass
@@ -600,7 +612,7 @@ def checkWin():
         return False
     else:
         return True
-        
+
 
 # Collects user input, validates it and returns it appropriately 
 def inTake(lim):
@@ -617,13 +629,14 @@ def inTake(lim):
             else:
                 print("Select a number between 1 and", lim)
                 return inTake(lim)
-        
+
         else:
             entry = entry.upper()
             if entry == 'help'.upper() or entry == '--help'.upper():
                 # Print help message
                 return printHelp(lim)
             elif entry.upper() == 'exit'.upper() or entry == '--exit'.upper():
+                saveSession()
                 exit(0)
             elif entry.upper() == "restart".upper():
                 deck = createDeck()
@@ -641,7 +654,10 @@ def inTake(lim):
                         except Exception as e:
                             print(e)
                             pass
+
                 
+                duration[0] = time()
+                duration[1] = 0
                 saveSession()
             elif entry.upper() == "auto".upper():
                 if autoMode[0]:
@@ -653,7 +669,7 @@ def inTake(lim):
                 proMode[0] = True
             elif entry.upper() == "on".upper():
                 proMode[0] = False
-    
+
     else:
         return inTake(lim)
 
@@ -662,7 +678,7 @@ def inTake(lim):
 def autoSendHome():
     """Moves the cards that are ready to move to home without needing
     player's interaction."""
-    
+
     def autoColToHome(card, suit, posn):
         """Checks the passed card against the respective home position. If
         the home[posn] contains a card that is a number less than the card,
@@ -673,9 +689,9 @@ def autoSendHome():
             for i in range(1, 13):
                 if card == suit[i] and home[posn] == suit[i - 1]:
                     return True
-    
+
     #2. A card that can go its index should be popped to its respective home[posn]
-    
+
     def simplify(card):
         """Returns the card's suit and suit's position at foundation pile"""
         if card in heSuit:
@@ -686,7 +702,7 @@ def autoSendHome():
             return [flSuit, 2]
         else:
             return [spSuit, 3]
-    
+
     #1. Start by checking all the 8 cards at the end of columns against the home
     rerun = False # I use this to decide whether to run this autoSendHome() again
     for num in range(8):
@@ -701,7 +717,7 @@ def autoSendHome():
                 printGameField()
                 sleep(delayT[0])
                 rerun = True
-    
+
     #3. Next check the 4 free cells            
     for num in range(4):
         card = freeCells[num]
@@ -716,7 +732,7 @@ def autoSendHome():
                 printGameField()
                 sleep(delayT[0])
                 rerun = True
-                
+
     if rerun:
         autoSendHome()
 
@@ -744,9 +760,9 @@ def gamePlay():
         print("'exit' to end the game")
         print("'off' to hide prompts")
         print("'auto' to disable auto movement.   ", end = "") if autoMode[0] else print("'auto' to enable auto movement", end = " ")
-    
+
     sel = inTake(5) if not autoMode[0] else inTake(3)
-    
+
     try:
         if sel == 1:
             # column to freecell
@@ -789,11 +805,11 @@ def gamePlay():
                 printHeader()
                 print("Cell", posn + 1, "is empty")
                 sleep(1)
-    
+
     except Exception as e:
         print(e)
         pass
-        
+
     if autoMode[0]:
         autoSendHome()
         # print("The comp is cheating")
