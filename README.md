@@ -5,7 +5,7 @@ Below are some of the projects that I have been and I'm still working on (sic). 
 
 # Projects
 ## Python
-The first 4 projects below, namely, the connect 4, Hangman, TicTacToe, and FreeCell were part of my class work. I took the course named [_Python is Easy_](https://www.pirple.com/courses/take/python-is-easy/). 
+The first 4 projects below, namely, the [Connect 4](./My_python_Connect_4_game.py), [Hangman](./My_python_Hangman.py), [Tic-tac-toe](./My_python_tic-tac-toe_game_VS_Comp.py), and [FreeCell](./My_python_FreeCell.py) were part of my class work. I took the course named [_Python is Easy_](https://www.pirple.com/courses/take/python-is-easy/). 
 While I gave much customization to the projects, I believe there may still be better ways of handling them, and I will always welcome suggestions on how to improve them.
 
 **1. TicTacToe**
