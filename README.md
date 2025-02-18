@@ -1,16 +1,16 @@
 # About me
-I am an Instrumentation and Control Engineer based in Kenya. I recently gained interest in programming and am in the process of learning to code. I decided to join this network to make my learning process smooth and collaborative. As at now (the time when I'm writing this), I know two languages quite well. I have previously been working on _**python**_ and am in the process of reminding myself _the **java** language_.
+I am an Instrumentation and Control Engineer based in Kenya. I recently gained interest in programming and am in the process of learning to code. I decided to join this network to make my learning process smooth and collaborative. As at now (the time when I'm writing this), I know two languages quite well. I have previously been working on _**python**_ and I'm in the process of reminding myself _the **java** language_.
 Below are some of the projects that I have been and I'm still working on (sic). I will categorize them according to the language to make it easy to browse through them.
 **Please dive right in and thanks for visiting.**
 
 # Projects
 ## Python
-The first 4 projects below, namely, the [Connect 4](./My_python_Connect_4_game.py), [Hangman](./My_python_Hangman.py), [Tic-tac-toe](./My_python_tic-tac-toe_game_VS_Comp.py), and [FreeCell](./My_python_FreeCell.py) were part of my class work. I took the course named [_Python is Easy_](https://www.pirple.com/courses/take/python-is-easy/). 
-While I gave much customization to the projects, I believe there may still be better ways of handling them, and I will always welcome suggestions on how to improve them.
+The first 4 projects below, namely, the [Connect 4](./My_python_Connect_4_game.py), [Hangman](./My_python_Hangman.py), [Tic-tac-toe](./My_python_tic-tac-toe_game_VS_Comp.py), and [FreeCell](./My_python_FreeCell.py) were part of my [_Python is Easy_](https://www.pirple.com/courses/take/python-is-easy/) class work. 
+While I put considerable effort to the projects, I believe there may still be better ways of handling them, and I will always welcome suggestions on how to improve them.
 
 **1. TicTacToe**
 TicTacToe is a famous game and especially among those lerning to code. It is basically a 2 player 3 X 3 grid game where each player aims to place their pieces to form a straight line. One player uses 'X' and the other uses 'O'. 
-In my version of TicTacToe, I have provided provisions for both single and 2-player modes. In single player mode, the player plays agains the computer, which will try to prevent the player from winning and it will also attempt to win before the player.
+In my version of TicTacToe, I have provided provisions for both single and 2-player modes. In single player mode, the player plays against the computer, which will try preventing the player from winning while attempting to win before the player.
 Furthermore, to make it more fun, I provided 3 hard mode levels for the single player. Please check it out at [Tic-tac-toe](./My_python_tic-tac-toe_game_VS_Comp.py).
 
 **2. Connect 4**
@@ -21,7 +21,7 @@ Please try it out at [Connect 4](./My_python_Connect_4_game.py) and provide revi
 **3. Hangman**
 The Hangman is also a common game for new programmers. It is basically a guessing game whereby the player tries guessing a workd one letter at a time.
 The catch is that the player has a definite number of wrong guesses that they can make. With each wrong letter, a line-man moves a step closer to getting hanged.
-If however, the player guesses the name with less wrong guesses, they win the game. 
+If however, the player guesses the name correctly before the man hangs, they win the game. 
 My game also provides a single and 2 player modes and in the single player mode, the game offers differnt hard levels from which the player can choose.
 Please check it out at [Hangman](./My_python_Hangman.py) and give me feedback. Thank you.
 
